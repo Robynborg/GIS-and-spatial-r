@@ -16,7 +16,7 @@ library(viridis)
 ```
 
 ```{r}
-setwd("/Users/robynborgstrom/Desktop/Git")
+setwd("/Users/robynborgstrom/Desktop/Git/GIS-and-spatial-r")
 data <- read.delim("Atlantic bottlenose dolphin.csv", header = TRUE, stringsAsFactors = FALSE)
 occurrence_data <- data %>%
   select(where(~ !all(is.na(.)))) %>%
@@ -27,14 +27,15 @@ occurrence_data<- data %>%
 ```
 
 ```{r}
-occurrence_data <- data_clean %>%
-  filter(decimalLatitude != 0 & decimalLongitude != 0)
+
 occurrence_sf <- st_as_sf(occurrence_data, coords = c("decimalLongitude", "decimalLatitude"), crs = 4326)
 
 
 ```
 
 ```{r}
+install.packages("usmap", repos = "https://cran.rstudio.com/")
+library(usmap)
 us_map <- us_map()
 
 ggplot(data = us_map) +
@@ -46,6 +47,7 @@ ggplot(data = us_map) +
 ```
 
 ```{r}
+chooseCRANmirror(graphics = FALSE)
 install.packages("leaflet")
 library(leaflet)
 library(sp)
