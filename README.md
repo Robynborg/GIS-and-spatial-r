@@ -2,6 +2,10 @@ README
 ================
 2025-02-24
 
+ ## The dataset includes data of the sightings of the Atlantic bottlenose dolphin mostly in Georgia estuarine waters from 1992 to 2003. The data were used to look at their distribution on a United States map, including an intercative map. 
+
+ ## Th data were taken from GBIF: https://www.gbif.org/dataset/a3e4e91c-0848-4e20-99f2-a0f72abb646c 
+
 ``` r
 options(repos = c(CRAN = "https://cran.rstudio.com/"))
 ```
@@ -114,3 +118,4 @@ leaflet(data = occurrence_sf) %>%
                                   "<br>", "Longitude:", longitude))
 ```
 
+ 
