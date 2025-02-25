@@ -96,5 +96,6 @@ leaflet(data = occurrence_sf) %>%
                    popup = ~paste("Latitude:", latitude, 
                                   "<br>", "Longitude:", longitude))
 ```
+![Map](https://your-image-url.com)
 
  
