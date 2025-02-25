@@ -2,7 +2,7 @@ README
 ================
 2025-02-24
 
- ## The dataset includes data of the sightings of the Atlantic bottlenose dolphin mostly in Georgia estuarine waters from 1992 to 2003. The data were used to look at their distribution on a United States map, including an intercative map. 
+ ## The dataset includes sightings of the Atlantic bottlenose dolphin, primarily in Georgia's estuarine waters, from 1992 to 2003. The data were used to analyze their distribution on a United States map, including an interactive map.
 
  ## Th data were taken from GBIF: https://www.gbif.org/dataset/a3e4e91c-0848-4e20-99f2-a0f72abb646c 
 
