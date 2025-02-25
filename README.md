@@ -80,7 +80,6 @@ install.packages("leaflet")
 
 ``` r
 library(leaflet)
-library(sp)
 install.packages("sf")
 ```
 
