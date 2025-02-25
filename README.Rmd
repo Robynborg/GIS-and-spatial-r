@@ -1,0 +1,75 @@
+---
+title: README
+output: rmarkdown::github_document
+date: "2025-02-24"
+always_allow_html: true
+---
+```{r}
+options(repos = c(CRAN = "https://cran.rstudio.com/"))
+
+```
+
+```{r}
+library(tidyverse)
+library(dplyr)
+library(sf)
+library(ggplot2)      
+library(rnaturalearth) 
+library(leaflet)
+library(mapview)
+library(viridis)
+
+```
+
+```{r}
+setwd("/Users/robynborgstrom/Desktop/Git/GIS-and-spatial-r")
+data <- read.delim("Atlantic bottlenose dolphin.csv", header = TRUE, stringsAsFactors = FALSE)
+occurrence_data <- data %>%
+  select(where(~ !all(is.na(.)))) %>%
+  select(where(~ any(!. == ""))) 
+occurrence_data<- data %>%
+  filter(!is.na(decimalLatitude) & !is.na(decimalLongitude))
+
+```
+
+```{r}
+
+occurrence_sf <- st_as_sf(occurrence_data, coords = c("decimalLongitude", "decimalLatitude"), crs = 4326)
+
+
+```
+
+```{r}
+install.packages("usmap", repos = "https://cran.rstudio.com/")
+library(usmap)
+us_map <- us_map()
+
+ggplot(data = us_map) +
+  geom_sf(data = occurrence_sf, aes(color = "blue"), size = 2, alpha = 0.6) +
+  geom_sf(fill = "lightgrey") +  
+  theme_minimal() +
+  theme(legend.position = "none") + labs(title = "Atlantic Bottlenose Dolphin Occurrences (1992-2003)")
+
+```
+
+```{r}
+
+install.packages("usmap", repos = "https://cran.rstudio.com/")
+ library(usmap)
+install.packages("leaflet")
+library(leaflet)
+library(sp)
+install.packages("sf")
+library(sf)
+
+coordinates <- st_coordinates(occurrence_sf)
+occurrence_sf$longitude <- coordinates[, 1]
+occurrence_sf$latitude <- coordinates[, 2]
+leaflet(data = occurrence_sf) %>%
+  addTiles() %>%  
+  addCircleMarkers(lng = ~longitude, lat = ~latitude, 
+                   color = "blue", radius = 5, opacity = 0.7,
+                   popup = ~paste("Latitude:", latitude, 
+                                  "<br>", "Longitude:", longitude))
+```
+
