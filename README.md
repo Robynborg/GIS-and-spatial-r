@@ -96,6 +96,7 @@ leaflet(data = occurrence_sf) %>%
                    popup = ~paste("Latitude:", latitude, 
                                   "<br>", "Longitude:", longitude))
 ```
-![Map](file:///Users/robynborgstrom/Desktop/Git/GIS-and-spatial-r/leaflet_map.html)
+[Interactive Map](https://your-map-url.com)
+
 
  
