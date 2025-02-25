@@ -30,8 +30,6 @@ library(dplyr)
 library(sf)
 ```
 
-    ## Linking to GEOS 3.13.0, GDAL 3.8.5, PROJ 9.5.1; sf_use_s2() is TRUE
-
 ``` r
 library(ggplot2)      
 library(rnaturalearth) 
@@ -39,8 +37,6 @@ library(leaflet)
 library(mapview)
 library(viridis)
 ```
-
-    ## Loading required package: viridisLite
 
 ``` r
 setwd("/Users/robynborgstrom/Desktop/Git/GIS-and-spatial-r")
@@ -60,10 +56,6 @@ occurrence_sf <- st_as_sf(occurrence_data, coords = c("decimalLongitude", "decim
 install.packages("usmap", repos = "https://cran.rstudio.com/")
 ```
 
-    ## 
-    ## The downloaded binary packages are in
-    ##  /var/folders/j3/cq1k_dz54b5gwpd0t68rd6q40000gn/T//Rtmpzpc5Yr/downloaded_packages
-
 ``` r
 library(usmap)
 us_map <- us_map()
@@ -81,28 +73,16 @@ ggplot(data = us_map) +
 install.packages("usmap", repos = "https://cran.rstudio.com/")
 ```
 
-    ## 
-    ## The downloaded binary packages are in
-    ##  /var/folders/j3/cq1k_dz54b5gwpd0t68rd6q40000gn/T//Rtmpzpc5Yr/downloaded_packages
-
 ``` r
  library(usmap)
 install.packages("leaflet")
 ```
-
-    ## 
-    ## The downloaded binary packages are in
-    ##  /var/folders/j3/cq1k_dz54b5gwpd0t68rd6q40000gn/T//Rtmpzpc5Yr/downloaded_packages
 
 ``` r
 library(leaflet)
 library(sp)
 install.packages("sf")
 ```
-
-    ## 
-    ## The downloaded binary packages are in
-    ##  /var/folders/j3/cq1k_dz54b5gwpd0t68rd6q40000gn/T//Rtmpzpc5Yr/downloaded_packages
 
 ``` r
 library(sf)
