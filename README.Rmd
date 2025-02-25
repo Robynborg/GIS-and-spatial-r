@@ -62,7 +62,10 @@ leaflet(data = occurrence_sf) %>%
                    popup = ~paste("Latitude:", latitude, 
                                   "<br>", "Longitude:", longitude))
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 9210a2c397ad1ad383b0c7b323d3f99c5342be29
 ```
 
