@@ -98,4 +98,5 @@ leaflet(data = occurrence_sf) %>%
                    popup = ~paste("Latitude:", latitude, 
                                   "<br>", "Longitude:", longitude))
 ```
+## Interactive map screenshot 
 ![Interactive map screenshot](https://github.com/Robynborg/GIS-and-spatial-r/blob/main/README_files/figure-gfm/Interactive%20map%20.png?raw=true)
